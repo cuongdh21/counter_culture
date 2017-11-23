@@ -73,7 +73,7 @@ module CounterCulture
             instance.paper_trail.touch_with_version if instance
           end
 
-          klass.where(primary_key => id_to_change).update_all updates.join(', ')
+          klass.unscoped.where(primary_key => id_to_change).update_all updates.join(', ')
         end
       end
     end
