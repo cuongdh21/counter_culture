@@ -71,7 +71,7 @@ module CounterCulture
         # column name otherwise
         # which class does this relation ultimately point to? that's where we have to start
 
-        scope = relation_class
+        scope = relation_class.unscoped
 
         counter_column_names = column_names || {nil => counter_cache_name}
 
